@@ -26,8 +26,8 @@ class ocvSlowMoApp : public AppBasic {
 	cv::Mat					mCurrentFrame, mPrevFrame, mFlow;
 	float					mRate, mTime;
 	bool					mOpticalFlow, mBilinear;
-	int						mPyramidLevels;
-	int						mWinSize;
+	int32_t					mPyramidLevels;
+	int32_t					mWinSize;
 	
 	params::InterfaceGl		mParams;
 };
@@ -56,13 +56,13 @@ void ocvSlowMoApp::setup()
 	mParams = params::InterfaceGl( "Parameters", Vec2i( 200, 400 ) );
 	mRate = 20;
 	mParams.addParam( "Rate", &mRate, "min=1 max=200 step=1 keyIncr=r keyDecr=R" );
-	mOpticalFlow = false;
+	mOpticalFlow = true;
 	mParams.addParam( "Optical Flow", &mOpticalFlow, "keyIncr=l" );
-	mBilinear = false;
+	mBilinear = true;
 	mParams.addParam( "Bilinear", &mBilinear, "keyIncr=b" );
 	mPyramidLevels = 2;
 	mParams.addParam( "Pyramid Levels", &mPyramidLevels, "min=1 max=20 step=1 keyIncr=p keyDecr=P" );	
-	mWinSize = 2;
+	mWinSize = 20;
 	mParams.addParam( "Window size", &mWinSize, "min=1 max=30 step=1 keyIncr=w keyDecr=W" );	
 }
 
