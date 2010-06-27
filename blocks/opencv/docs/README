@@ -19,6 +19,7 @@ Setting up OpenCV on Windows
       cinder\blocks\opencv\OpenCV
 * cmake -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_PYTHON_SUPPORT=OFF -D BUILD_NEW_PYTHON_SUPPORT=OFF -D BUILD_EXAMPLES=OFF -D BUILD_TESTS=OFF -D BUILD_SHARED_LIBS=OFF -D WITH_PNG=OFF -D WITH_JPEG=OFF -D WITH_JASPER=OFF -D WITH_TIFF=OFF -D CMAKE_CXX_FLAGS_RELEASE="/MT /O2 /Ob2 /D NDEBUG" -D CMAKE_CXX_FLAGS_DEBUG="/D_DEBUG /MTd /Zi /Ob0 /Od /RTC1" -D CMAKE_C_FLAGS_RELEASE="/MT /O2 /Ob2 /D NDEBUG" -D CMAKE_C_DEBUG_DEBUG="/D_DEBUG /MTd /Zi /Ob0 /Od /RTC1" -G "Visual Studio 10" .
  (or -G "Visual Studio 9 2009")
+* You may need to run the same command twice
 * Switch the runtime of the opencv_lapack target to Multithreaded Debug
 * Disable debug symbols on the Release targets
 * Open the new cinder\blocks\opencv\OpenCV\OpenCV.sln file and Batch Build all targets
