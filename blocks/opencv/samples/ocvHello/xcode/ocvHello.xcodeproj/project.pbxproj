@@ -247,11 +247,10 @@
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder_d.a",
 					"-lcurl",
-					"$(OPENCV_PATH)/lib/libcv.a",
-					"$(OPENCV_PATH)/lib/libcxcore.a",
+					"$(CINDER_PATH)/blocks/opencv/OpenCV/lib/libcv.a",
+					"$(CINDER_PATH)/blocks/opencv/OpenCV/lib/libcxcore.a",
 				);
 				PRODUCT_NAME = ocvHello;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -275,8 +274,8 @@
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder.a",
 					"-lcurl",
-					"$(OPENCV_PATH)/lib/libcv.a",
-					"$(OPENCV_PATH)/lib/libcxcore.a",
+					"$(CINDER_PATH)/blocks/opencv/OpenCV/lib/libcv.a",
+					"$(CINDER_PATH)/blocks/opencv/OpenCV/lib/libcxcore.a",
 				);
 				PRODUCT_NAME = ocvHello;
 				STRIP_INSTALLED_PRODUCT = YES;
@@ -293,7 +292,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(OPENCV_PATH)/include",
+					"$(CINDER_PATH)/blocks/opencv/OpenCV/include",
 					"$(CINDER_PATH)/boost",
 				);
 				OPENCV_PATH = "../../../OpenCV-2.1.0";
@@ -312,7 +311,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(OPENCV_PATH)/include",
+					"$(CINDER_PATH)/blocks/opencv/OpenCV/include",
 					"$(CINDER_PATH)/boost",
 				);
 				OPENCV_PATH = "../../../OpenCV-2.1.0";

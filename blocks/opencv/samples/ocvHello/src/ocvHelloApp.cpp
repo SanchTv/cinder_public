@@ -4,15 +4,11 @@
 
 #include "CinderOpenCV.h"
 
-#include <opencv/cv.h>
+#include "Resources.h"
 
 using namespace ci;
 using namespace ci::app;
 
-#include <list>
-using std::list;
-
-// We'll create a new Cinder Application by deriving from the BasicApp class
 class ocvHelloApp : public AppBasic {
   public:
 	void setup();
@@ -23,8 +19,7 @@ class ocvHelloApp : public AppBasic {
 
 void ocvHelloApp::setup()
 {
-	const char* imagename = "../../lena.jpg";
-	cv::Mat img( toOcv( loadImage( imagename ) ) );
+	cv::Mat img( toOcv( loadImage( loadResource( RES_IMAGE ) ) ) );
     
 	cv::Mat img_yuv;
 	cv::cvtColor( img, img_yuv, CV_BGR2YCrCb ); // convert image to YUV color space. The output image will be created automatically
