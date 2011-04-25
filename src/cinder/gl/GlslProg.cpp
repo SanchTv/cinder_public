@@ -76,9 +76,9 @@ void GlslProg::loadShader( Buffer shaderSourceBuffer, GLint shaderType )
 
 void GlslProg::loadShader( const char *shaderSource, GLint shaderType )
 {
-	GLhandleARB handle = glCreateShaderObjectARB( shaderType );
-	glShaderSource( (GLuint)handle, 1, reinterpret_cast<const GLchar**>( &shaderSource ), NULL );
-	glCompileShaderARB( handle );
+	GLuint handle = glCreateShader( shaderType );
+	glShaderSource( handle, 1, reinterpret_cast<const GLchar**>( &shaderSource ), NULL );
+	glCompileShader( handle );
 	
 	GLint status;
 	glGetShaderiv( (GLuint) handle, GL_COMPILE_STATUS, &status );
@@ -86,7 +86,7 @@ void GlslProg::loadShader( const char *shaderSource, GLint shaderType )
 		std::string log = getShaderLog( (GLuint)handle );
 		throw GlslProgCompileExc( log, shaderType );
 	}
-	glAttachObjectARB( mObj->mHandle, handle );
+	glAttachShader( mObj->mHandle, handle );
 }
 
 void GlslProg::link()
